@@ -1,0 +1,29 @@
+.container-page-offers{
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.pageOffersWith{
+   background: #f6f9fc;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 50px 0;
+    
+}
+.tittleOffers{
+    
+    padding-left: 60px;
+}
+.tittleOffers p{
+    font-size:20px;
+    color:rgb(85, 85, 85)
+}
+.tittleOffers h1{
+    font-size:30px;
+    
+}

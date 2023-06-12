@@ -1,0 +1,144 @@
+.BuyPart{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  width: 500px;
+  display: flex;
+  padding: 30px;
+  align-items: center;
+  flex-direction: column;
+  inset: 0;
+  margin:auto;
+  height:fit-content;
+  margin-bottom: 8rem;
+  border-radius: 10px; position:absolute;
+  inset: 0;
+  margin: auto;
+  border: 1px solid #eee;
+}
+.buyyy {
+  width: 350px;
+
+}
+.formAll{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  width: max-content;
+
+  padding: 30px;
+  align-items: center;
+  
+  
+  inset: 0;
+  margin:auto;
+  height:fit-content;
+  margin-bottom: 8rem;
+  border-radius: 10px; 
+  position:absolute;
+  inset: 0;
+  margin: auto;
+  border: 1px solid #eee;
+}
+
+.input_forms{
+  margin-left: 10px;
+}
+.icons-forms{
+  width: 100px;
+  
+ 
+}
+.icons-form{
+  margin-right: 15px;
+}
+h1{
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+p{
+  font-size :12px;
+  margin: 0px;
+}
+
+.campus {
+  border: 1px solid rgb(211, 206, 206);
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding:10px;
+  
+  align-items: center;
+  width: 80%;
+
+  display: flex;
+  
+
+
+}
+
+.form-horizontal{
+ 
+  width: 30%;
+}
+.buttonsAll{
+  width:440px ;
+  background: linear-gradient(to left,#FF13CB,#F6761A) ;
+  border: none;
+  font-size: 17px;
+  padding: 10px;
+  color: aliceblue;
+  margin-bottom: 10px;
+
+}
+
+.pink{
+  width:auto ;
+      background: linear-gradient(to left,#FF13CB,#F6761A) ;
+      border: none;
+      font-size: 15px;
+      padding: 10px;
+      color: aliceblue;
+      margin-bottom: 10px;
+  
+}
+
+.blue{
+  color: blue;
+  font-size: 15px;
+}
+
+.pass{
+  padding:10px;
+}
+
+.li-password{
+  padding-left: 40px;
+  font-size: 12px;
+  color: gray;
+  padding-bottom: 10px;
+}
+
+.container-flecha{
+  width: 100%;
+
+}
+.containerEye{
+
+  cursor: pointer;
+ margin-left:20px ;
+  display: flex;
+ 
+}
+.campus input{
+ 
+  width: 100%;
+}
+
+.scroll-beheavior::-webkit-scrollbar-thumb
+{
+  height: 10px;
+  width: 4px;
+  background-color: #09C;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px -2px rgba(51,0,51,0.5);
+}
+.scroll-beheavior::-webkit-scrollbar-track{
+  width: 2px;
+}

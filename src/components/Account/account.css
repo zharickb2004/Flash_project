@@ -1,0 +1,70 @@
+.boxAccount2 {
+  padding: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.boxAccount1 {
+  padding: 10px 20px;
+}
+.boxAccount2 img {
+  border-radius: 100%;
+}
+.imagen {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.formRegister {
+  box-shadow: 0 0 10px 0 rgb(220, 220, 220);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+}
+.containerBox {
+  display: flex;
+  justify-content: space-between;
+}
+hr {
+  border: 1px solid rgb(211, 206, 206);
+}
+.tittleAccount {
+  padding: 20px 0;
+
+  font-size: 10px;
+}
+.tittleAccount p {
+  font-size: 12px;
+  color: gray;
+}
+.name {
+  display: flex;
+  justify-content: flex-end;
+}
+.name label {
+  color: gray;
+
+  font-size: 15px;
+}
+.containerName input {
+  border: 1px solid rgb(211, 206, 206);
+}
+.buttonAccount {
+  border-radius: 5px;
+}
+.boxAccount2 p {
+  font-size: 12px;
+  color: gray;
+}
+.buttonImage {
+  border-radius: 1px;
+
+  font-size: 12px;
+}

@@ -1,0 +1,13 @@
+.flash {
+  
+  padding: 50px 0;
+  display: flex;
+
+}
+
+
+
+.container-see{
+  display: flex;
+  align-items:center;
+}
