@@ -60,7 +60,7 @@ function Malls() {
           </div>
         </div>
       </div>
-      {load ? (
+      {load === false ?  (
         <div className=" flex justify-center items-center gap-6 my-10 ">
           <div className="boxMalls flex flex-col items-center ">
             <div className="rounded-full h-full overflow-clip  ">

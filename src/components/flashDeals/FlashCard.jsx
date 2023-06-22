@@ -71,52 +71,49 @@ const FlashCard = () => {
             {product.map((productItems) => {
               return (
                 <div key={productItems.id_product}>
-                  {load ? (
+                  {load === false ? (
                     <>
-                      <div className="product border m-1 ">
-                        <div className="flex justify-between p-2">
-                          <div className="disponible">
-                            <Skeleton width={80} />
-                          </div>
-                          <div>
-                            <Skeleton width={30} />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-center items-center">
-                        <Skeleton width={220} height={180} />
-                      </div>
-                      <div className="product-details p-4">
-                        <div className="info">
-                          <Skeleton width={100} />
-                          <Skeleton width={90} />
-                        </div>
-                        <div className="flex justify-center items-center">
-                          <Skeleton width={220} height={180} />
-                        </div>
-                        <div className="product-details p-4">
-                          <div className="info">
-                            <Skeleton width={100} />
-                            <Skeleton width={90} />
-                          </div>
-                          <div className="div">
-                            <Skeleton width={150} />
-                          </div>
-
-                          <div className="price">
-                            <Skeleton width={100} />
-                            <Skeleton width={100} />
-                          </div>
-                          <div className="flex justify-between item-center mt-4">
-                            <div className="div">
-                              <Skeleton width={90} height={30} />
-                            </div>
-                            <div className="div">
-                              <Skeleton width={60} height={30} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                       <div className=" w-full  flex items-center justify-center ">
+            <div className="flex   gap-20">
+              <div className="product border m-1 ">
+                <div className="flex justify-between p-2">
+                  <div className="disponible">
+                    <Skeleton width={80} />
+                  </div>
+                  <div>
+                    <Skeleton width={30} />
+                  </div>
+                </div>
+                <div className="flex justify-center items-center">
+                  <Skeleton width={220} height={180} />
+                </div>
+                <div className="product-details p-4">
+                  <div className="info">
+                    <Skeleton width={100} />
+                    <Skeleton width={90} />
+                  </div>
+                  <div className="div">
+                    <Skeleton width={150} />
+                  </div>
+                  <div className="price">
+                    <Skeleton width={100} />
+                    <Skeleton width={100} />
+                  </div>
+                  <div className="flex justify-between item-center mt-4">
+                    <div className="div">
+                      <Skeleton width={90} height={30} />
+                    </div>
+                    <div className="div">
+                      <Skeleton width={60} height={30} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+             
+              
+            </div>
+          </div>
                     </>
                   ) : (
                     <div className="product border m-1 ">

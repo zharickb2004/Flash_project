@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { TodoGetApis } from "../../Apis/Apis";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function Orders() {
   const [storeBuy, setStoreBuy] = useState([]);

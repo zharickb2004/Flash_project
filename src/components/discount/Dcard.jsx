@@ -76,7 +76,7 @@ const DCard = () => {
   return (
     <>
       <ToastContainer />
-      {load ? (
+      {load === false ? (
         <>
           <div className=" w-full  flex items-center justify-center ">
             <div className="flex   gap-20">

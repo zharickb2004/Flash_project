@@ -62,7 +62,7 @@ function MenuAdmin() {
 
           <Link
             to="/StoresInfo"
-            className="hover:bg-gradient-to-r from-orange-600 to-pink-500hover:text-white hover:rounded-full duration-300 px-4 my-2 flex bg-gray-100 rounded-md p-2"
+            className="hover:bg-gradient-to-r from-orange-600 to-pink-500 hover:text-white hover:rounded-full duration-300 px-4 my-2 flex bg-gray-100 rounded-md p-2"
           >
             {" "}
             <svg

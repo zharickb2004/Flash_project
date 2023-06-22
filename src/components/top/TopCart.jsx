@@ -28,11 +28,11 @@ const TopCart = () => {
       {store.map((value) => {
         return (
           <div className="my-10" key={value.id_store}>
-            {load ? (
-              <div className="flex justify-center items-center  my-10 ">
+            {load === false ? (
+              <div className="flex justify-center items-center  my-10  ">
                 <div className="boxMalls   flex flex-col justify-center items-center">
                   <div className="rounded-full overflow-hidden  m-2">
-                    <Skeleton width={180} height={180} />
+                    <Skeleton width={170} height={170} />
                   </div>
                   <div className="flex  ">
                     <Skeleton width={100} />
