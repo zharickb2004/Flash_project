@@ -38,7 +38,7 @@ function MenuAdmin() {
             </div>
           ))
         ) : (
-          <h1>No hay data</h1>
+         null
         )}
 
         <ul class="space-y-2 tracking-wide mt-8">

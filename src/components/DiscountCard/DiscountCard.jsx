@@ -82,7 +82,7 @@ function DiscountCard() {
             product.map((productItems) => {
               return (
                 <div className="  ">
-                  {load === false ? (
+                  {load ? (
                     <div className="product border m-1 ">
                       <div className="flex justify-between p-2">
                         <div className="disponible">
@@ -213,7 +213,7 @@ function DiscountCard() {
               );
             })
           ) : (
-            <h1>no hay data</h1>
+           null
           )}
         </div>
       </div>

@@ -50,7 +50,7 @@ function MenuEmployed() {
                       </div>
                     ))
                   ) : (
-                    <h1>No hay informacion</h1>
+                   null
                   )}
                   <li>
                     <Link
@@ -295,7 +295,7 @@ function MenuEmployed() {
                       <span class="pl-4">Estadisticas</span>
                     </Link>
                   </li>
-                  <div className=" h-[100px] flex items-end">
+                  <div className=" h-[270px] flex items-end ">
                     <button class="px-4 py-3 flex items-center space-x-4 rounded-md text-white-600 group ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

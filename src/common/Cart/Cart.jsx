@@ -195,7 +195,7 @@ function Cart() {
               class="pink mx-auto block"
               onClick={() => {
                 swal.fire({
-                  title: "¿Estas seguro de realizar la compra?",
+                  title: "Datos personales",
                   text: "Una vez realizada la compra no se podra cancelar",
                   html: `
                     <div className="BuyPart">
@@ -263,12 +263,12 @@ function Cart() {
           </div>
         </div>
                   `,
-                  icon: "warning",
+                  
                   showCancelButton: true,
-                  confirmButtonText: "Si, comprar",
-                  cancelButtonText: "No, cancelar",
-                  confirmButtonColor: "#3085d6",
-                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Siguiente",
+                  cancelButtonText: "Cancelar",
+                  confirmButtonColor: "#ff13cb",
+                  cancelButtonColor: "#808080",
                   preConfirm: async () => {
                     let data = {
                       adress: document.getElementsByName("adress")[0].value,

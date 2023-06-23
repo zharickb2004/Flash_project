@@ -31,7 +31,7 @@ function SingleShop() {
       {store.length > 0 ? (
         store.map((item) => (
           <div className="container" key={item.id}>
-            {load === false ?(
+            {load  ?(
               <div className="di">
 <div className="div">
             <div className="w-full h-[250px]">
@@ -119,7 +119,7 @@ function SingleShop() {
           </div>
         ))
       ) : (
-        <h1></h1>
+        null
       )}
 
       <div>
@@ -128,7 +128,7 @@ function SingleShop() {
             {products.map((productItems) => (
               <div className=" flex  ">
                 {
-                  load ===false?
+                  load ?
                   (
 <div className="product border m-1 ">
                       <div className="flex justify-between p-2">
@@ -209,7 +209,7 @@ function SingleShop() {
             ))}
           </div>
         ) : (
-          <h1></h1>
+          null
         )}
       </div>
     </>

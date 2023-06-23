@@ -195,7 +195,7 @@ function DataTableCategory({ data }) {
       <div
         className="ag-theme-alpine mx-auto w-[50%] rounded-md overflow-hidden shadow-lg"
         id="myGrid"
-        style={{ height: 500, width: "62%" }}
+        style={{ height: 500, width: "57%" }}
       >
         <AgGridReact
           ref={gridRef}

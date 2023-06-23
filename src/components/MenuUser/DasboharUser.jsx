@@ -7,10 +7,14 @@ import MenuUserF from "./MenuUserF";
 export default function DasboharUser() {
   return (
     <>
-      <Header />
       <div className="g">
+      <Header />
+      <div className="div mt-10  ">
         <MenuUserF />
+        <div className="div bg-red-200">
         <FormPorfileUser />
+        </div>
+        </div>
       </div>
     </>
   );

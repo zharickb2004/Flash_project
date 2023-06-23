@@ -38,7 +38,7 @@ function AllMalls() {
                   window.location.href = `/OfficialStores/${value.id_admin}/0/${value.name_admin}`;
                 }}
               >
-                {load === false ? (
+                {load  ? (
                  <div className="flex justify-center items-center  my-10 ">
                  <div className="boxMalls   flex flex-col justify-center items-center">
                    <div className="rounded-full overflow-hidden  m-2">
