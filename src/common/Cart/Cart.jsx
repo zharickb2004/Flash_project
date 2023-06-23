@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useMemo } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import swal from "sweetalert2";
 
@@ -10,8 +10,8 @@ import Header from "../header/Header";
 import "../../components/Login/user.css";
 
 function Cart() {
-  const [product, setProduct,] = useState([]);
-  const navigate = useNavigate();
+  const {payment} = useParams();
+  const [product, setProduct] = useState([]);
 
   const { addCard, getProductCar, deleteProductCar, updateProductCar } =
     useContextShopCar();
@@ -23,7 +23,7 @@ function Cart() {
   });
 
   const DeleteProductCar = async (id) => {
-     await deleteProductCar(id);
+    await deleteProductCar(id);
   };
 
   const UpdateProductCar = async (id, amount, datas, typeDelete) => {
@@ -33,7 +33,7 @@ function Cart() {
       type: typeDelete,
     };
 
-     await updateProductCar(id, data, datas);
+    await updateProductCar(id, data, datas);
     window.location.reload(false);
   };
 
@@ -60,10 +60,23 @@ function Cart() {
 
   useMemo(() => {
     (async () => {
+      if (payment === "payment-buy") {
+        const response = await TodoGetApis.allDelete();
+        console.log(response);
+        swal.fire({
+          title: "Compra exitosa",
+          text: "Gracias por comprar en Flash, te enviaremos un correo con la factura",
+          icon: "success",
+          confirmButtonText: "Aceptar",
+        }).then((result) => {
+          window.location.href = "/";
+        })
+      } else {
       const response = await getProductCar();
       setProduct(response.data.rows);
+      }
     })();
-  }, [getProductCar]);
+  }, [getProductCar, payment]);
 
   return (
     <>
@@ -193,10 +206,9 @@ function Cart() {
             </div>
             <button
               class="pink mx-auto block"
-              onClick={() => {
+              onClick={async () => {
                 swal.fire({
-                  title: "¿Estas seguro de realizar la compra?",
-                  text: "Una vez realizada la compra no se podra cancelar",
+                  title: "Datso personales:",
                   html: `
                     <div className="BuyPart">
           <h1 className="pb-3 text-2xl font-bold text-gray-700">Compra</h1>
@@ -263,25 +275,18 @@ function Cart() {
           </div>
         </div>
                   `,
-                  icon: "warning",
+                  showLoaderOnConfirm: true,
                   showCancelButton: true,
-                  confirmButtonText: "Si, comprar",
-                  cancelButtonText: "No, cancelar",
-                  confirmButtonColor: "#3085d6",
-                  cancelButtonColor: "#d33",
+                  cancelButtonText: "Cancelar",
+                  confirmButtonText: "Sigiente",
                   preConfirm: async () => {
-                    let data = {
+                    let dataUser = {
                       adress: document.getElementsByName("adress")[0].value,
                       phone: document.getElementsByName("phone")[0].value,
                       id: document.getElementsByName("id")[0].value,
                       venta: "virtual",
                     };
-                     await TodoGetApis.PostBuy(
-                      data,
-                      0,
-                      totalBuy
-                    );
-                    navigate("/");
+                    await TodoGetApis.CreateSessionBuy(dataUser, totalBuy);
                   },
                 });
               }}

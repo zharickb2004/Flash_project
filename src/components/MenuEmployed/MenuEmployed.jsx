@@ -50,7 +50,7 @@ function MenuEmployed() {
                       </div>
                     ))
                   ) : (
-                    <h1>No hay informacion</h1>
+                    <h1>...</h1>
                   )}
                   <li>
                     <Link

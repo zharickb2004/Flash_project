@@ -92,7 +92,7 @@ function App() {
           <Route path='/DeleteCategory' element={<PageDeleteCategory />} />
           <Route path='/UpdateCategory' element={<PageUpdateCategory />} />
           <Route path='/AccountAdmin' element={<PageAccountAdmin />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/cart/:payment' element={<Cart />} />
           <Route path='/SingleShop' element={<PageSingleShop />} />
           <Route path='/SingleCategory/:code/:name' element={<CategoryUnitarie />} />
           <Route path='/Employed' element={<PageEmployed />} />

@@ -7,6 +7,7 @@ let urlServerProducts = "https://flash-backend.onrender.com/products";
 let urlServerCard = "https://flash-backend.onrender.com/card";
 let urlServerUser = "https://flash-backend.onrender.com/user";
 let urlServerBuy = "https://flash-backend.onrender.com/buy";
+let urlServerPayment = "https://flash-backend.onrender.com/payment";
 
 let token = localStorage.getItem("token");
 
@@ -95,6 +96,15 @@ export const TodoGetApis = {
       localStorage.removeItem("token");
       localStorage.removeItem("rol");
     }
+  },
+
+  allDelete: async () => {
+    const response = await axios.delete(`${urlServerCard}/allDelete`, {
+      headers: {
+        token,
+      },
+    });
+  return response;
   },
 
   GetAccountCustomer: async () =>
@@ -382,4 +392,18 @@ export const TodoGetApis = {
         token,
       },
     }),
+
+  CreateSessionBuy: async (data, price) => {
+    const response = await axios.post(
+      `${urlServerPayment}/paymentCart/${price}`,
+      { data },
+      {
+        headers: {
+          token,
+        },
+      }
+    );
+    const { url } = response.data; // Obtener la URL de la respuesta del servidor de pagos
+    window.location.href = url;
+  },
 };

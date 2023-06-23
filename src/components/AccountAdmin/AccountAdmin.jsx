@@ -228,7 +228,7 @@ function AccountAdmin() {
                   </div>
                 ))
               ) : (
-                <h1>No hay data</h1>
+                <h1>...</h1>
               )}
             </div>
             <div className="tittleAccount flex bg-green ">
@@ -382,7 +382,7 @@ function AccountAdmin() {
                 </div>
               ))
             ) : (
-              <h1>No hay data</h1>
+              <h1>...</h1>
             )}
           </div>
         </Form>
