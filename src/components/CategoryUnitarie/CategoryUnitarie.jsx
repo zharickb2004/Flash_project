@@ -207,7 +207,7 @@ function CategoryUnitarie() {
               );
             })
           ) : (
-            <h1>no hay data</h1>
+           null
           )}
         </div>
       </div>

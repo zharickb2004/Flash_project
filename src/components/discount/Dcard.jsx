@@ -76,7 +76,7 @@ const DCard = () => {
   return (
     <>
       <ToastContainer />
-      {load ? (
+      {load  ? (
         <>
           <div className=" w-full  flex items-center justify-center ">
             <div className="flex   gap-20">
@@ -317,7 +317,7 @@ const DCard = () => {
                 );
               })
             ) : (
-              <h1>no hay data</h1>
+              <h1></h1>
             )}
           </Slider>
         </div>

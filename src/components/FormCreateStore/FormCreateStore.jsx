@@ -10,7 +10,7 @@ function FormCreateStore() {
   return (
     <>
       <ToastContainer />
-      <div className="ml-[19%] absolute inset-0">
+      <div className="ml-[9%] absolute inset-0">
         <Formik
           initialValues={{
             email: "",

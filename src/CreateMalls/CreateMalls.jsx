@@ -6,14 +6,33 @@ import swal from "sweetalert2";
 
 import MenuSuperAdmin from "../MenuSuperAmin/MenuSuperAdmin";
 import { TodoGetApis } from "../Apis/Apis";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function CreateMalls() {
   const [image, setImage] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [load, setLoad] = useState(false);
   return (
     <>
+{load ?(
+  <aside class="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] ">
+ <div className="div mt-20 flex flex-col">
+
+  <Skeleton height={60}/>
+  <div className="div  flex justify-center mb-5">
+
+  <Skeleton width={120}/>
+  </div>
+  <Skeleton height={40}/>
+  <Skeleton height={40}/>
+
+ </div>
+  </aside>
+):(
+
       <MenuSuperAdmin />
+)}
       <ToastContainer />
       <div className="form-register">
         <Formik

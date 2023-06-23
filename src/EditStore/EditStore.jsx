@@ -223,7 +223,7 @@ function EditStore() {
                   </div>
                 ))
               ) : (
-                <h1>...</h1>
+                null
               )}
             </div>
             <div className="tittleAccount  ">
@@ -494,7 +494,7 @@ function EditStore() {
                 </div>
               ))
             ) : (
-              <h1>...</h1>
+              <h1>No hay data</h1>
             )}
           </div>
         </Form>

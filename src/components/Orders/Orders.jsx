@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { TodoGetApis } from "../../Apis/Apis";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function Orders() {
   const [storeBuy, setStoreBuy] = useState([]);
@@ -24,7 +26,7 @@ function Orders() {
         <div class="overflow-x-auto">
           <div class="flex justify-center">
             <div class="w-[1260px]  ">
-              <div class="bg-white shadow-lg border-2 rounded my-6 h-[500px]">
+              <div class="bg-white shadow-lg border-2 rounded my-6 h-[auto]">
                 <table class="min-w-max w-full table-auto ">
                   <thead>
                     <tr class="bg-gray-100 text-gray-500 uppercase text-sm leading-normal">
@@ -105,7 +107,7 @@ function Orders() {
                           </tr>
                         ))
                       ) : (
-                        <h1>No hay pedidos</h1>
+                       null
                       )}
                     </>
                   </tbody>
