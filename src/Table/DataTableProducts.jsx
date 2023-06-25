@@ -257,6 +257,7 @@ function DataTableProducts({ data }) {
                 /(\d)(?=(\d\d\d)+(?!\d))/g,
                 "$1."
               ),
+              dicount: item.dicount,
               availability_product: item.availability_product,
               data_product: moment(item.data_product).format(
                 "D MMMM YYYY, h:mm:ss a"

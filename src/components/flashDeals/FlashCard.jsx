@@ -156,7 +156,7 @@ const FlashCard = () => {
                               className="text-white compra pink rounded-md inline-block truncate i"
                               onClick={() => {
                                 navigate(
-                                  `/CardProducts/${productItems.id_product}`
+                                  `/CardProducts/${productItems.id_product}/routes`
                                 );
                               }}
                             >

@@ -168,7 +168,7 @@ function CategoryUnitarie() {
                               className="text-white compra pink rounded-md inline-block truncate i"
                               onClick={() => {
                                 navigate(
-                                  `/CardProducts/${categoryProduct.id_product}`
+                                  `/CardProducts/${categoryProduct.id_product}/routes`
                                 );
                               }}
                             >

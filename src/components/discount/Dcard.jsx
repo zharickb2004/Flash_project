@@ -280,7 +280,7 @@ const DCard = () => {
                               className="compra pink text-white rounded-md inline-block cursor-pointer"
                               onClick={() => {
                                 navigate(
-                                  `/CardProducts/${productItems.id_product}`
+                                  `/CardProducts/${productItems.id_product}/routes`
                                 );
                               }}
                             >

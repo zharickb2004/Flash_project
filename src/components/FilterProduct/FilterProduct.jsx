@@ -116,7 +116,7 @@ export default function FilterProduct() {
                             className="compra pink text-white rounded-md inline-block truncate i"
                             onClick={() => {
                               navigate(
-                                `/CardProducts/${productItems.id_product}`
+                                `/CardProducts/${productItems.id_product}/routes`
                               );
                             }}
                           >

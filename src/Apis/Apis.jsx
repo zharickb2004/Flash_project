@@ -1,13 +1,14 @@
 import axios from "axios";
 
-let urlServerAuth = "https://flash-backend.onrender.com/authUser";
-let urlServerStores = "https://flash-backend.onrender.com/stores";
-let urlServerCategory = "https://flash-backend.onrender.com/category";
-let urlServerProducts = "https://flash-backend.onrender.com/products";
-let urlServerCard = "https://flash-backend.onrender.com/card";
-let urlServerUser = "https://flash-backend.onrender.com/user";
-let urlServerBuy = "https://flash-backend.onrender.com/buy";
-let urlServerPayment = "https://flash-backend.onrender.com/payment";
+// let urlServerAuth = "https://flash-backend.onrender.com/authUser";
+let urlServerAuth = "http://localhost:3105/authUser";
+let urlServerStores = "http://localhost:3105/stores";
+let urlServerCategory = "http://localhost:3105/category";
+let urlServerProducts = "http://localhost:3105/products";
+let urlServerCard = "http://localhost:3105/card";
+let urlServerUser = "http://localhost:3105/user";
+let urlServerBuy = "http://localhost:3105/buy";
+let urlServerPayment = "http://localhost:3105/payment";
 
 let token = localStorage.getItem("token");
 
@@ -396,14 +397,14 @@ export const TodoGetApis = {
   CreateSessionBuy: async (data, price) => {
     const response = await axios.post(
       `${urlServerPayment}/paymentCart/${price}`,
-      { data },
+      {data},
       {
         headers: {
           token,
         },
       }
     );
-    const { url } = response.data; // Obtener la URL de la respuesta del servidor de pagos
+    const { url } = response.data;
     window.location.href = url;
   },
 };

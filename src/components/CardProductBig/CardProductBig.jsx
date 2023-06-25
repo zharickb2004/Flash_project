@@ -1,6 +1,6 @@
+import { useLocation, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 import { useContextShopCar } from "../../Hook/UseContextShop";
 import Header from "../../common/header/Header";
@@ -13,6 +13,11 @@ function CardProductBig() {
   const [product, setProduct] = useState([]);
   const { postProductCar } = useContextShopCar();
   const { code } = useParams();
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  console.log(currentPath);
 
   let token = localStorage.getItem("token");
 

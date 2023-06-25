@@ -1,20 +1,18 @@
 import React, { useState, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import { useCookies } from "react-cookie";
 import swal from "sweetalert2";
-
 import { useContextShopCar } from "../../Hook/UseContextShop";
 import { TodoGetApis } from "../../Apis/Apis";
 import Header from "../header/Header";
-
 import "../../components/Login/user.css";
 
 function Cart() {
-  const {payment} = useParams();
+  const { payment } = useParams();
   const [product, setProduct] = useState([]);
-
   const { addCard, getProductCar, deleteProductCar, updateProductCar } =
     useContextShopCar();
+  const [cookies, setCookie] = useCookies(["dataUser"]);
 
   const money = new Intl.NumberFormat("en-CO", {
     style: "currency",
@@ -52,7 +50,7 @@ function Cart() {
       : amountP + i.amount_Product
   );
 
-  let totalBuy = 0;
+  let totalBuy = null;
 
   for (let x = 0; x < respons.length; x++) {
     totalBuy += respons[x] * amount[x];
@@ -61,42 +59,58 @@ function Cart() {
   useMemo(() => {
     (async () => {
       if (payment === "payment-buy") {
-        const response = await TodoGetApis.allDelete();
-        console.log(response);
-        swal.fire({
-          title: "Compra exitosa",
-          text: "Gracias por comprar en Flash, te enviaremos un correo con la factura",
-          icon: "success",
-          confirmButtonText: "Aceptar",
-        }).then((result) => {
-          window.location.href = "/";
-        })
+        const respnse = await TodoGetApis.allDelete();
+        if (respnse.status === 200) {
+          alert(cookies.buy);
+          await TodoGetApis.PostBuy(cookies.dataUser, 0, cookies.buy);
+          swal
+            .fire({
+              title: "Compra exitosa",
+              text: "Gracias por comprar en Flash, te enviaremos un correo con la factura",
+              icon: "success",
+              confirmButtonText: "Aceptar",
+            })
+            .then((result) => {
+              window.location.href = "/";
+            });
+        }
       } else {
-      const response = await getProductCar();
-      setProduct(response.data.rows);
+        const response = await getProductCar();
+        setProduct(response.data.rows);
       }
     })();
-  }, [getProductCar, payment]);
+  }, [payment]);
+
+  const handleBuy = async () => {
+    const dataUser = {
+      adress: document.getElementsByName("adress")[0].value,
+      phone: document.getElementsByName("phone")[0].value,
+      id: document.getElementsByName("id")[0].value,
+      venta: "virtual",
+    };
+    setCookie("dataUser", dataUser, { path: "/" });
+    await TodoGetApis.CreateSessionBuy(dataUser, totalBuy);
+  };
 
   return (
     <>
       <Header />
 
-      <div class="h-screen bg-white pt-10">
-        <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
-          <div class="rounded-lg md:w-2/3">
+      <div className="h-screen bg-white pt-10">
+        <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
+          <div className="rounded-lg md:w-2/3">
             {addCard.map((i) => (
               <>
-                <div class="justify-between mb-6 relative rounded-lg  p-6 shadow-2xl border sm:flex sm:justify-start">
+                <div className="justify-between mb-6 relative rounded-lg  p-6 shadow-2xl border sm:flex sm:justify-start">
                   <img
                     className="w-32 rounded-md"
                     src={i.img_producto}
                     alt=""
                   />
-                  <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                    <div class="mt-5 sm:mt-0">
+                  <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                    <div className="mt-5 sm:mt-0">
                       <div className="flex items-center gap-3">
-                        <h2 class="text-lg font-bold text-gray-900">
+                        <h2 className="text-lg font-bold text-gray-900">
                           {i.name_product}
                         </h2>
                         {i.discount > 0 ? (
@@ -105,15 +119,15 @@ function Cart() {
                           </p>
                         ) : null}
                       </div>
-                      <p class="mt-1 text-xs text-gray-700">
+                      <p className="mt-1 text-xs text-gray-700">
                         {i.description_product}
                       </p>
                     </div>
-                    <div class="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-                      <div class="flex items-center space-x-4 flex-col mt-8">
-                        <div class="flex items-center mt-2 border-gray-100">
+                    <div className="mt-4 flex justify-between im sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
+                      <div className="flex items-center space-x-4 flex-col mt-8">
+                        <div className="flex items-center mt-2 border-gray-100">
                           <span
-                            class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                            className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
                             onClick={() =>
                               UpdateProductCar(i.id_product, 1, i, "delete")
                             }
@@ -128,7 +142,7 @@ function Cart() {
                           </div>
 
                           <span
-                            class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                            className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
                             onClick={() =>
                               UpdateProductCar(i.id_product, 1, i, "add")
                             }
@@ -138,7 +152,7 @@ function Cart() {
                           </span>
                         </div>
                         <div className="di">
-                          <p class="text-sm">
+                          <p className="text-sm">
                             {i.discount > 0 ? (
                               <div className="flex flex-col">
                                 <p className="font-bold line-through text-red-600">
@@ -167,7 +181,7 @@ function Cart() {
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
-                            class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+                            className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
                           >
                             <path
                               strokeLinecap="round"
@@ -183,119 +197,91 @@ function Cart() {
               </>
             ))}
           </div>
-          <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3 sticky top-[5rem]">
+          <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+            <div className="font-bold text-lg mb-4">Resumen de compra</div>
             <div class="mb-2 flex justify-between">
               <p class="text-gray-700">Subtotal</p>
               <p class="text-gray-700 flex flex-col">
                 {addCard.map((i) => (
                   <span>
                     {i.discount !== 0
-                      ? money.format((i.price_product * i.discount) / 100)
+                      ? money.format(
+                          ((i.price_product * i.discount) / 100 -
+                            i.price_product) *
+                            -1
+                        )
                       : money.format(i.price_product)}
                   </span>
                 ))}
               </p>
             </div>
-
-            <hr class="my-4" />
-            <div class="flex justify-between">
-              <p class="text-lg font-bold">Total</p>
-              <div>
-                <p class="mb-1 text-lg font-bold">{money.format(totalBuy)}</p>
-              </div>
+            <div className="flex justify-between mt-2">
+              <span className="text-gray-600">Envío:</span>
+              <span>Gratis</span>
             </div>
-            <button
-              class="pink mx-auto block"
-              onClick={async () => {
-                swal.fire({
-                  title: "Datos personales",
-                  text: "Una vez realizada la compra no se podra cancelar",
-                  html: `
-                    <div className="BuyPart">
-          <h1 className="pb-3 text-2xl font-bold text-gray-700">Compra</h1>
-          <div className="buyyy">
-            <div className="campus">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 16 16"
+            <div className="border-t mt-6"></div>
+            <div className="flex justify-between mt-6 font-bold">
+              <span>Total:</span>
+              <span>{money.format(totalBuy)}</span>
+            </div>
+            <div className="mt-6">
+              <label
+                htmlFor="adress"
+                className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
               >
-                <g fill="gray">
-                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
-                  <path d="m8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
-                </g>
-              </svg>
+                Dirección de envío
+              </label>
               <input
-                className="input_forms"
                 type="text"
                 name="adress"
-                placeholder="Direccion"
+                id="adress"
+                required
+                className="w-full border-2 border-black px-3 py-2 placeholder-gray-300 border rounded-md focus:outline-none focus:ring focus:ring-indigo-100"
               />
             </div>
-            <div className="campus">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 256 256"
+            <div className="mt-6">
+              <label
+                htmlFor="phone"
+                className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
               >
-                <path
-                  fill="gray"
-                  d="M231.88 175.08A56.26 56.26 0 0 1 176 224C96.6 224 32 159.4 32 80a56.26 56.26 0 0 1 48.92-55.88a16 16 0 0 1 16.62 9.52l21.12 47.15v.12A16 16 0 0 1 117.39 96c-.18.27-.37.52-.57.77L96 121.45c7.49 15.22 23.41 31 38.83 38.51l24.34-20.71a8.12 8.12 0 0 1 .75-.56a16 16 0 0 1 15.17-1.4l.13.06l47.11 21.11a16 16 0 0 1 9.55 16.62Z"
-                />
-              </svg>
+                Teléfono de contacto
+              </label>
               <input
-                className="input_forms"
-                type="number"
+                type="text"
                 name="phone"
-                placeholder="Telefono"
+                id="phone"
+                required
+                className="w-full px-3 py-2 placeholder-gray-300 border rounded-md focus:outline-none focus:ring focus:ring-indigo-100"
               />
             </div>
-            <div className="campus flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 15 15"
+            <div className="mt-6">
+              <label
+                htmlFor="id"
+                className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
               >
-                <path
-                  fill="gray"
-                  fillRule="evenodd"
-                  d="M0 3.5A1.5 1.5 0 0 1 1.5 2h12A1.5 1.5 0 0 1 15 3.5v8a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 0 11.5v-8ZM3 6a2 2 0 1 1 4 0a2 2 0 0 1-4 0Zm9 0H9V5h3v1Zm0 3H9V8h3v1ZM5 9a2.927 2.927 0 0 0-2.618 1.618l-.33.658A.5.5 0 0 0 2.5 12h5a.5.5 0 0 0 .447-.724l-.329-.658A2.927 2.927 0 0 0 5 9Z"
-                  clipRule="evenodd"
-                />
-              </svg>
+                Número de identificación
+              </label>
               <input
-                className="input_forms"
                 type="text"
                 name="id"
-                placeholder="Identificacion"
+                id="id"
+                required
+                className="w-full px-3 py-2 placeholder-gray-300 border rounded-md focus:outline-none focus:ring focus:ring-indigo-100"
               />
             </div>
-          </div>
-        </div>
-                  `,
-                  
-                  showCancelButton: true,
-                  confirmButtonText: "Siguiente",
-                  cancelButtonText: "Cancelar",
-                  confirmButtonColor: "#ff13cb",
-                  cancelButtonColor: "#808080",
-                  preConfirm: async () => {
-                    let dataUser = {
-                      adress: document.getElementsByName("adress")[0].value,
-                      phone: document.getElementsByName("phone")[0].value,
-                      id: document.getElementsByName("id")[0].value,
-                      venta: "virtual",
-                    };
-                    await TodoGetApis.CreateSessionBuy(dataUser, totalBuy);
-                  },
-                });
-              }}
-            >
-              Comprar
-            </button>
+            <div className="flex items-center justify-center mt-6">
+              <button
+                class="pink rounded mx-auto block"
+                onClick={() => {
+                  if (totalBuy !== 0) {
+                    handleBuy();
+                    setCookie("buy", totalBuy, { path: "/" });
+                  }
+                }}
+              >
+                Comprar
+              </button>
+            </div>
           </div>
         </div>
       </div>

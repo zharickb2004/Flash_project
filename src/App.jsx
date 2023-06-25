@@ -97,7 +97,7 @@ function App() {
           <Route path='/SingleCategory/:code/:name' element={<CategoryUnitarie />} />
           <Route path='/Employed' element={<PageEmployed />} />
           <Route path='/CreateAdmin' element={<PageCreateAdmin />} />
-          <Route path='/CardProducts/:code' element={<CardProductBig />} />
+          <Route path='/CardProducts/:code/:rute' element={<CardProductBig />} />
           <Route path='*' element={<PageNotFound />} />
           <Route path='/Employed' element={<PageEmployed2 />} />
           <Route path='*' element={<PageNotFound />} />
