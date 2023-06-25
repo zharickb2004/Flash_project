@@ -103,78 +103,40 @@ function PageBuy() {
       back - subTotal === -0
     ) {
       swal.fire({
-        titel: "Venta en proceso",
+        title: "Venta en proceso",
         text: "Espere un momento",
         html: `
-                    <div className="BuyPart">
-          <h1 className="pb-3 text-2xl font-bold text-gray-700">Compra</h1>
-          <div className="buyyy">
-            <div className="campus">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 16 16"
-              >
-                <g fill="gray">
-                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
-                  <path d="m8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
-                </g>
-              </svg>
-              <input
-                className="input_forms"
-                type="text"
-                name="adress"
-                placeholder="Direccion"
-              />
+          <div className="BuyPart">
+            <h1 className="pb-3 text-2xl font-bold text-gray-700">Registro Venta Presencial</h1>
+            <div className="buyyy">
+              <div className="campus flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16">
+                  <g fill="gray">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
+                    <path d="m8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
+                  </g>
+                </svg>
+                <input className="input_forms" type="text" name="adress" placeholder="Direccion" />
+              </div>
+              <div className="campus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 256 256">
+                  <path fill="gray" d="M231.88 175.08A56.26 56.26 0 0 1 176 224C96.6 224 32 159.4 32 80a56.26 56.26 0 0 1 48.92-55.88a16 16 0 0 1 16.62 9.52l21.12 47.15v.12A16 16 0 0 1 117.39 96c-.18.27-.37.52-.57.77L96 121.45c7.49 15.22 23.41 31 38.83 38.51l24.34-20.71a8.12 8.12 0 0 1 .75-.56a16 16 0 0 1 15.17-1.4l.13.06l47.11 21.11a16 16 0 0 1 9.55 16.62Z" />
+                </svg>
+                <input className="input_forms" type="number" name="phone" placeholder="Telefono" />
+              </div>
+              <div className="campus flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 15 15">
+                  <path fill="gray" fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h12A1.5 1.5 0 0 1 15 3.5v8a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 0 11.5v-8ZM3 6a2 2 0 1 1 4 0a2 2 0 0 1-4 0Zm9 0H9V5h3v1Zm0 3H9V8h3v1ZM5 9a2.927 2.927 0 0 0-2.618 1.618l-.33.658A.5.5 0 0 0 2.5 12h5a.5.5 0 0 0 .447-.724l-.329-.658A2.927 2.927 0 0 0 5 9Z" clip-rule="evenodd" />
+                </svg>
+                <input className="input_forms" type="text" name="id" placeholder="Identificacion" />
+              </div>
             </div>
-            <div className="campus">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 256 256"
-              >
-                <path
-                  fill="gray"
-                  d="M231.88 175.08A56.26 56.26 0 0 1 176 224C96.6 224 32 159.4 32 80a56.26 56.26 0 0 1 48.92-55.88a16 16 0 0 1 16.62 9.52l21.12 47.15v.12A16 16 0 0 1 117.39 96c-.18.27-.37.52-.57.77L96 121.45c7.49 15.22 23.41 31 38.83 38.51l24.34-20.71a8.12 8.12 0 0 1 .75-.56a16 16 0 0 1 15.17-1.4l.13.06l47.11 21.11a16 16 0 0 1 9.55 16.62Z"
-                />
-              </svg>
-              <input
-                className="input_forms"
-                type="number"
-                name="phone"
-                placeholder="Telefono"
-              />
-            </div>
-            <div className="campus flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 15 15"
-              >
-                <path
-                  fill="gray"
-                  fillRule="evenodd"
-                  d="M0 3.5A1.5 1.5 0 0 1 1.5 2h12A1.5 1.5 0 0 1 15 3.5v8a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 0 11.5v-8ZM3 6a2 2 0 1 1 4 0a2 2 0 0 1-4 0Zm9 0H9V5h3v1Zm0 3H9V8h3v1ZM5 9a2.927 2.927 0 0 0-2.618 1.618l-.33.658A.5.5 0 0 0 2.5 12h5a.5.5 0 0 0 .447-.724l-.329-.658A2.927 2.927 0 0 0 5 9Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <input
-                className="input_forms"
-                type="text"
-                name="id"
-                placeholder="Identificacion"
-              />
-            </div>
-          </div>
-        </div>`,
+          </div>`,
         showCancelButton: true,
-        confirmButtonText: "Efectuar",
+        confirmButtonText: "Registrar",
         cancelButtonText: "Cancelar",
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: "#FF13CB",
+        cancelButtonColor: "#808080",
         preConfirm: async () => {
           let data = {
             adress: document.getElementsByName("adress")[0].value,
@@ -186,6 +148,7 @@ function PageBuy() {
           handdleBuy(data);
         },
       });
+      
     } else {
       toast.warn("Ingrese un pago valido", {
         position: "top-right",
@@ -249,9 +212,9 @@ function PageBuy() {
         </aside>
         <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%] flex flex-col  justify-center items-center">
           <div className="ml-14  px-7 pt-7 flex justify-between items-center w-[1350px] ">
-            <h1>VENTA PRESENCIAL</h1>
+            <h1 className="pb-3 text-4xl font-bold text-gray-700 mb-2">Venta Presencial</h1>
             <div className="flex mr-16 items-center">
-              <p className="text-[18px]">EMPLEADO:</p>
+              <p className="text-[18px] font-bold">Empleado:</p>
               {employee.length > 0 ? (
                 <p className="ml-1 text-[15px]">
                   {employee.map((x) => x.name_employee)}
@@ -286,7 +249,7 @@ function PageBuy() {
               </div>
               <label className="ml-7"> Cantidad:</label>
               <div className="ml-4">
-                <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+                <div class="flex flex-row h-10 w-full mt-1  p-2 border">
                   <input
                     type="number"
                     placeholder="Ingrese la cantidad"

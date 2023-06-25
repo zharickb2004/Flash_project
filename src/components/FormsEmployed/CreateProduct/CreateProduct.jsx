@@ -13,6 +13,11 @@ function CreateProduct() {
   const [category, setCategory] = useState([]);
   const [image, setImage] = useState([]);
   const [id, setId] = useState();
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+const handleCategoryChange = (event) => {
+  setSelectedCategory(event.target.value);
+};
 
   const handdleCategory = (evenet) => {
     setId(evenet.target.value);
@@ -29,7 +34,8 @@ function CreateProduct() {
     <>
       <ToastContainer />
       <MenuEmployed />
-      <div className="formAll ml-[15%] absolute inset-0 ">
+      
+      <div className="form-register ml-[15%] absolute inset-0">
         <Formik
           initialValues={{
             nameProduct: "",
@@ -71,7 +77,7 @@ function CreateProduct() {
                   theme: "light",
                 });
               } else {
-                toast.error("Error en el sistema", {
+                toast.error("Error al crear producto", {
                   position: "top-right",
                   autoClose: 5000,
                   hideProgressBar: true,
@@ -84,7 +90,7 @@ function CreateProduct() {
               }
             } catch (error) {
               setLoading(false);
-              toast.error("Error en el sistema", {
+              toast.error("Error al crear producto", {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: true,
@@ -97,9 +103,10 @@ function CreateProduct() {
             }
           }}
         >
+           <div className="formAll">
           <Form className="w-[45rem]">
             <div className="flex flex-col items-center justify-center">
-              <h1 className="pb-3 text-2xl font-bold text-gray-700">
+              <h1 className="pb-3 text-2xl font-bold text-gray-700 mb-6">
                 Crear Producto
               </h1>
               <div className="grid grid-cols-2 gap-2">
@@ -264,18 +271,19 @@ function CreateProduct() {
                     />
                   </svg>
                   {category.length > 0 ? (
-                    <Field
+                      <Field
                       className="input_forms"
                       type="text"
                       name="categoryProduct"
                       placeholder="Categoria"
                       as="select"
-                      onChange={handdleCategory}
+                      onChange={handleCategoryChange}
+                      value={selectedCategory}
                     >
-                      <option value="">Seleccione una categoria</option>
-                      {category.map((items) => (
-                        <option value={items.id_category}>
-                          {items.name_category}
+                      <option value="">categoria</option>
+                      {category.map((item) => (
+                        <option value={item.id_category} key={item.id_category}>
+                          {item.name_category}
                         </option>
                       ))}
                     </Field>
@@ -433,6 +441,7 @@ function CreateProduct() {
               )}
             </div>
           </Form>
+          </div>
         </Formik>
       </div>
     </>

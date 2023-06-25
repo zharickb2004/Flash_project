@@ -14,7 +14,7 @@ function CodeRecoverPassword() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const [seconds, setSeconds] = useState(60);
+  const [seconds, setSeconds] = useState(30);
 
   const handdleEmail = async () => {
     let data = {
@@ -116,7 +116,7 @@ function CodeRecoverPassword() {
               </div>
               <img
                 className="w-[500px]"
-                src="https://res.cloudinary.com/anonimous/image/upload/v1686140215/Mobile-login_wosqea.jpg"
+                src="https://res.cloudinary.com/anonimous/image/upload/v1686144106/flash/image_wheg9w.png"
                 alt=""
               />
             </div>
@@ -201,18 +201,18 @@ function CodeRecoverPassword() {
                   </div>
                 ) : (
                   <>
-                    <div className="flex mb-4">
-                      <span>No he recibido un codigo: {seconds}</span>
+                    <div className="flex mb-4 text-xl">
+                      <span>Tu codigo vence en: {seconds}</span>
                       {seconds === 0 ? (
                         <span
-                          className="font-bold underline  cursor-pointer ml-4"
+                          className="font-bold underline  cursor-pointer ml-4 text-pink-500"
                           onClick={handdleEmail}
                         >
                           Reenviar codigo
                         </span>
                       ) : null}
                     </div>
-                    <button className="buttonsAll">Enviar Codigo</button>
+                    <button className="buttonsAll">Enviar </button>
                   </>
                 )}
               </div>
