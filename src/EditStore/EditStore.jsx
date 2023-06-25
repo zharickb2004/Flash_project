@@ -18,6 +18,7 @@ function EditStore() {
   }, []);
 
   return (
+    <div className="form-register ml-[15%] absolute inset-0">
     <Formik
       initialValues={account}
       validationSchema={Yup.object({
@@ -29,9 +30,9 @@ function EditStore() {
       })}
       onSubmit={async (values) => {}}
     >
-      <div className="formAll">
-        <Form className="w-[600px]">
-          <div className="flex w-full justify-around ">
+      <div className="formAll  ">
+        <Form className="w-[40rem] ">
+          <div className="flex w-full space-x-80  ">
             <div className="boxAccount">
               {account.length > 0 ? (
                 account.map((data) => (
@@ -121,7 +122,7 @@ function EditStore() {
                                     </path>
                                   </g>
                                 </svg>
-                                <span>Subir Imagen</span>
+                                <span className="w-[8rem]">Subir Imagen</span>
                               </div>
                             </div>
                           </div>
@@ -254,16 +255,16 @@ function EditStore() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            title: "cambiar nombre",
                             html: `
                         <input id="name" type="text"
-                        placeholder="Ingrese el nuevo nombre"/>
+                        placeholder="Ingrese nuevo nombre "/>
                         `,
                             focusConfirm: false,
                             focusCancel: false,
                             showCancelButton: true,
+                            confirmButtonColor: "#FF13CB",
                             showConfirmButton: true,
-                            confirmButtonText: "Guardar",
+                            confirmButtonText: "Editar",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let name = document.getElementById("name").value;
@@ -275,7 +276,7 @@ function EditStore() {
                               );
 
                               if (response === 200) {
-                                swal.fire("Nombre actualizado", {
+                                swal.fire("Nombre tienda actualizado", {
                                   icon: "success",
                                 });
                               }
@@ -321,16 +322,17 @@ function EditStore() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            tittle: "Editar Direccion",
+                           
                             html: ` <input id="addresStore" type="text"
-                        placeholder="Ingrese la nueva direccion"/>
+                        placeholder="Ingrese nueva direccion"/>
                         `,
                             focusConfirm: false,
                             focusCancel: false,
                             showCancelButton: true,
                             showConfirmButton: true,
-                            confirmButtonText: "Guardar",
+                            confirmButtonText: "Editar",
                             cancelButtonText: "Cancelar",
+                            confirmButtonColor: "#FF13CB",
                             preConfirm: async () => {
                               let addres =
                                 document.getElementById("addresStore").value;
@@ -341,7 +343,7 @@ function EditStore() {
                                 data
                               );
                               if (response === 200) {
-                                swal.fire("Direccion actualizada", {
+                                swal.fire("Direccion tienda actualizada", {
                                   icon: "success",
                                 });
                               }
@@ -377,16 +379,17 @@ function EditStore() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            title: "Editar Telefono",
+
                             html: ` <input id="phone" type="text"
-                        placeholder="Ingrese el nuevo telefono"/>
+                        placeholder="Ingrese nuevo telefono"/>
                         `,
                             focusConfirm: false,
                             focusCancel: false,
                             showCancelButton: true,
                             showConfirmButton: true,
-                            confirmButtonText: "Guardar",
+                            confirmButtonText: "Editar",
                             cancelButtonText: "Cancelar",
+                            confirmButtonColor: "#FF13CB",
                             preConfirm: async () => {
                               let phone =
                                 document.getElementById("phone").value;
@@ -439,9 +442,9 @@ function EditStore() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            title: "Editar Descripcion",
+      
                             html: ` <input id="description" type="text"
-                        placeholder="Ingrese la descripcion"/>
+                        placeholder="Ingrese nueva descripcion"/>
                         `,
                             focusConfirm: false,
                             focusCancel: false,
@@ -449,6 +452,7 @@ function EditStore() {
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
                             cancelButtonText: "Cancelar",
+                            confirmButtonColor: "#FF13CB",
                             preConfirm: async () => {
                               let description =
                                 document.getElementById("description").value;
@@ -500,6 +504,7 @@ function EditStore() {
         </Form>
       </div>
     </Formik>
+    </div>
   );
 }
 

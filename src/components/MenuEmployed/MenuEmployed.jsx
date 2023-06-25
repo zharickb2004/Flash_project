@@ -99,53 +99,14 @@ function MenuEmployed() {
                     </Link>
                   </li>
                   <div className="relative  mt-5">
+                    
                     <li
-                      className=" relative mt-3 hover:bg-gradient-to-r from-orange-600 to-pink-500 hover:text-white hover:rounded-full duration-300 px-4 my-2 flex bg-gray-100 rounded-md  p-2"
+                      className="hover:bg-gradient-to-r from-orange-600 to-pink-500 hover:text-white hover:rounded-full duration-300 px-4 my-2 flex bg-gray-100 rounded-md p-2"
                       onClick={() => {
                         window.location.href = "/MyOrders/" + store[0].id_store;
                       }}
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 48 48"
-                      >
-                        <mask id="ipSFolder0">
-                          <g
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="4"
-                          >
-                            <path
-                              fill="#fff"
-                              stroke="#fff"
-                              d="M7 6a2 2 0 0 1 2-2h30a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6Z"
-                            />
-                            <path
-                              stroke="#000"
-                              d="M16 29h4m-4 6h10M8 5s3.765 13 16 13S40 5 40 5"
-                            />
-                            <circle
-                              cx="24"
-                              cy="18"
-                              r="4"
-                              fill="#000"
-                              stroke="#000"
-                            />
-                            <path
-                              stroke="#fff"
-                              d="M15 4H9a2 2 0 0 0-2 2v6m26-8h6a2 2 0 0 1 2 2v6"
-                            />
-                          </g>
-                        </mask>
-                        <path
-                          fill="currentColor"
-                          d="M0 0h48v48H0z"
-                          mask="url(#ipSFolder0)"
-                        />
-                      </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><g fill="gray" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M5 10L8 13L14 7"/><path d="M5 24L8 27L14 21"/><path d="M5 38L8 41L14 35"/><path d="M21 24H43"/><path d="M21 38H43"/><path d="M21 10H43"/></g></svg>
                       <span className="pl-4">Pedidos</span>
                     </li>
                     <div className="absolute top-[-15px] right-0 ">
@@ -156,7 +117,7 @@ function MenuEmployed() {
                         viewBox="0 0 100 100"
                       >
                         <path
-                          fill=""
+                          fill="#ff004a"
                           d="M88.558 49.96c0-.885-.435-1.663-1.097-2.151l.014-.024l-9.324-5.383l5.367-9.296l-.018-.011a2.666 2.666 0 0 0-.127-2.408a2.667 2.667 0 0 0-2.025-1.314v-.026H70.58V18.61h-.022a2.667 2.667 0 0 0-1.314-2.022a2.662 2.662 0 0 0-2.412-.125l-.013-.023l-9.481 5.474l-5.25-9.094l-.019.011a2.668 2.668 0 0 0-2.149-1.094c-.885 0-1.664.435-2.151 1.097l-.024-.014l-5.337 9.244l-9.19-5.306l-.011.019a2.666 2.666 0 0 0-2.408.127a2.666 2.666 0 0 0-1.315 2.025h-.027v10.674H18.845v.021a2.667 2.667 0 0 0-2.022 1.314a2.667 2.667 0 0 0-.126 2.41l-.023.014l5.246 9.087l-9.394 5.424l.011.019a2.668 2.668 0 0 0-1.094 2.149c0 .885.435 1.664 1.097 2.151l-.014.024l9.324 5.383l-5.367 9.296l.018.01a2.666 2.666 0 0 0 .127 2.408a2.667 2.667 0 0 0 2.025 1.314v.027H29.42V81.39h.022c.092.816.549 1.58 1.314 2.022a2.665 2.665 0 0 0 2.412.125l.013.023l9.481-5.474l5.25 9.094l.019-.011a2.668 2.668 0 0 0 2.149 1.094c.885 0 1.664-.435 2.151-1.096l.023.013l5.337-9.244l9.191 5.306l.011-.019a2.666 2.666 0 0 0 2.408-.127a2.666 2.666 0 0 0 1.315-2.025h.027V70.398h10.613v-.021a2.667 2.667 0 0 0 2.022-1.314a2.67 2.67 0 0 0 .126-2.411l.023-.013l-5.246-9.087l9.394-5.424l-.011-.019a2.666 2.666 0 0 0 1.094-2.149zM43.715 61.355l-9.846-4.35l4.345 7.525l-2.456 1.418l-6.662-11.537l2.525-1.459l9.53 4.162l-4.185-7.248l2.457-1.418l6.66 11.537l-2.368 1.37zm4.652-2.686l-6.661-11.538l8.165-4.713l1.248 2.162l-5.709 3.295l1.398 2.422l5.587-3.225l1.248 2.16l-5.587 3.227l1.518 2.629l5.709-3.295l1.248 2.162l-8.164 4.714zm18.906-10.915L60.675 41l2.567 9.08l-2.611 1.508l-9.965-9.629l2.75-1.588l6.838 7.168l-2.617-9.605l1.92-1.108l6.993 7.079l-2.79-9.506l2.75-1.588l3.375 13.436l-2.612 1.507z"
                         />
                       </svg>
@@ -167,24 +128,7 @@ function MenuEmployed() {
                       to="/RegistreSales"
                       className="hover:bg-gradient-to-r from-orange-600 to-pink-500  hover:text-white hover:rounded-full duration-300 px-4 my-2 flex bg-gray-100 rounded-md  p-2"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 36 36"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M28 30H16v-8h-2v8H8v-8H6v8a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-8h-2Z"
-                          class="clr-i-solid clr-i-solid-path-1"
-                        />
-                        <path
-                          fill="currentColor"
-                          d="m33.79 13.27l-4.08-8.16A2 2 0 0 0 27.92 4H8.08a2 2 0 0 0-1.79 1.11l-4.08 8.16a2 2 0 0 0-.21.9v3.08a2 2 0 0 0 .46 1.28A4.67 4.67 0 0 0 6 20.13a4.72 4.72 0 0 0 3-1.07a4.73 4.73 0 0 0 6 0a4.73 4.73 0 0 0 6 0a4.73 4.73 0 0 0 6 0a4.72 4.72 0 0 0 6.53-.52a2 2 0 0 0 .47-1.28v-3.09a2 2 0 0 0-.21-.9ZM15 14.4v1.52L14.18 17a2.71 2.71 0 0 1-4.37 0L9 15.88V14.4L11.59 6H16Zm12 1.48L26.19 17a2.71 2.71 0 0 1-4.37 0L21 15.88V14.4L20 6h4.45L27 14.4Z"
-                          class="clr-i-solid clr-i-solid-path-2"
-                        />
-                        <path fill="none" d="M0 0h36v36H0z" />
-                      </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2 17h20v4H2v-4M6.25 7H9V6H6V3h8v3h-3v1h6.8c1 0 2 1 2.2 2l.5 7h-17l.55-7c0-1 1-2 2.2-2M13 9v2h5V9h-5M6 9v1h2V9H6m3 0v1h2V9H9m-3 2v1h2v-1H6m3 0v1h2v-1H9m-3 2v1h2v-1H6m3 0v1h2v-1H9M7 4v1h6V4H7Z"/></svg>
                       <span className="pl-4 whitespace-nowrap">
                         Ventas Presenciales
                       </span>

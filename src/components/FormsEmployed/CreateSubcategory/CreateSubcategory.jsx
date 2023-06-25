@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
 import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 
 import MenuEmployed from "../../MenuEmployed/MenuEmployed";
 import { TodoGetApis } from "../../../Apis/Apis";
@@ -21,6 +22,9 @@ function CreateSubcategory() {
           initialValues={{
             nameCategory: "",
           }}
+          validationSchema={Yup.object({
+            nameCategory: Yup.string().required("Campo obligatorio"),
+          })}
           onSubmit={async (values) => {
             setLoading(true);
             let data = {
@@ -61,7 +65,7 @@ function CreateSubcategory() {
             <Form className="w-[40rem]">
               <div className="flex flex-col items-center justify-center">
                 <h1 className="pb-3 text-2xl font-bold text-gray-700 mb-6">
-                  Crear Categoria
+                  Crear categoria
                 </h1>
                 <div className="campus">
                   <svg
@@ -215,7 +219,7 @@ function CreateSubcategory() {
                     </svg>
                   </div>
                 ) : (
-                  <button className="buttonsAll">Registrar</button>
+                  <button  type="submit" className="buttonsAll">Registrar</button>
                 )}
               </div>
             </Form>

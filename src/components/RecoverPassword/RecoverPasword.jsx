@@ -92,6 +92,7 @@ function RecoverPasword() {
                   </svg>
                 </Link>
               </div>
+              <img  className="w-[500px]" src="https://res.cloudinary.com/anonimous/image/upload/v1686144106/flash/image_wheg9w.png" alt="" />
             </div>
             <Form className=" w-[40rem] ">
               <div className="flex flex-col items-center justify-center">

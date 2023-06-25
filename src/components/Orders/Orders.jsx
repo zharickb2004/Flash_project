@@ -19,7 +19,7 @@ function Orders() {
   return (
     <div class="ml-auto mb-6 flex flex-col  justify-center items-center">
       <div className="ml-14  px-7 pt-7 flex justify-between items-center w-[1350px] ">
-        <h1>PEDIDOS</h1>
+        <h1 className="pb-3 text-4xl font-bold text-gray-700 mb-2">Pedidos</h1>
       </div>
 
       <div className="w-[100%]">
