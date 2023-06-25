@@ -41,7 +41,7 @@ const Search = () => {
           <div className="icon f_flex width">
             {getRol === null ? <UserBefore /> : <UserAfter />}
             <div className="cart relative">
-              <Link to="/cart" className="relative">
+              <Link to="/cart/payment-process" className="relative">
                 <span className=" icon-circle2 relative">
                   {addCard.length > 0 ? (
                     <div className="absolute top-0 right-0 text-white px-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 ">

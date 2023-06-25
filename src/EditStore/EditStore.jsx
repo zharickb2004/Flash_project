@@ -224,7 +224,7 @@ function EditStore() {
                   </div>
                 ))
               ) : (
-                <h1>No hay data</h1>
+                null
               )}
             </div>
             <div className="tittleAccount  ">

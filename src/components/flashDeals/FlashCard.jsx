@@ -71,7 +71,7 @@ const FlashCard = () => {
             {product.map((productItems) => {
               return (
                 <div key={productItems.id_product}>
-                  {load === false ? (
+                  {load  ? (
                     <>
                        <div className=" w-full  flex items-center justify-center ">
             <div className="flex   gap-20">

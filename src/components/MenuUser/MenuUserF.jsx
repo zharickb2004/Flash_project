@@ -24,14 +24,14 @@ function MenuUserF() {
 
   return (
     <div>
-      <div>
+      <div className="">
         <aside
           id="sidebar"
           class="fixed z-20 h-full top-0 left-0 pt-1 flex lg:flex
              flex-shrink-0 flex-col w-64 transition-width duration-75 "
           aria-label="Sidebar"
         >
-          <div class="relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
+          <div class="mt-20  relative flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white pt-0">
             <div class=" scroll-beheavior flex-1 flex flex-col pt-5 pb-4 ">
               <div class="flex-1 px-3 bg-white divide-y space-y-1">
                 <div class="space-y-2 pb-2">
@@ -52,7 +52,7 @@ function MenuUserF() {
                       </div>
                     ))
                   ) : (
-                    <h1>No hay data</h1>
+                  null
                   )}
                   <li>
                     <Link
@@ -101,7 +101,7 @@ function MenuUserF() {
                     </Link>
                   </li>
 
-                  <div class="space-y-2 pt-2  h-[600px]  flex items-end">
+                  <div class="space-y-2 pt-2  h-[500px]  flex items-end">
                     <button class="px-4 py-3 flex items-center space-x-4 rounded-md text-white-600 group h-[50px]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

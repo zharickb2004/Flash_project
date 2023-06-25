@@ -12,14 +12,17 @@ import "ag-grid-enterprise";
 function Options(e) {
   const handleDelete = () => {
     let data = JSON.stringify(e.data.id_store);
-    swal
-      .fire({
-        text: "¿Estas seguro de eliminar la tienda?",
-        buttons: {
-          cancel: true,
-          confirm: true,
-        },
-      })
+    swal.fire({
+      text: "¿Estás seguro de eliminar la tienda?",
+     
+      showConfirmButton: true,
+      didOpen: () => {
+        const confirmButton = swal.getPopup().querySelector(".swal2-confirm");
+        confirmButton.style.backgroundColor = "#FF13CB"; // Cambia el color de fondo del botón
+        confirmButton.style.color = "#ffffff"; // Cambia el color del texto del botón
+        // Otros estilos que desees aplicar
+      }
+    })
       .then(async (value) => {
         if (value) {
           const response = await TodoGetApis.DeleteStore(data);
@@ -141,7 +144,7 @@ function DataTableStore({ data }) {
       <div
         className="ag-theme-alpine mx-auto w-[50%] rounded-md overflow-hidden shadow-lg"
         id="myGrid"
-        style={{ height: 800, width: "74%" }}
+        style={{ height: 800, width: "69%" }}
       >
         <AgGridReact
           ref={gridRef}

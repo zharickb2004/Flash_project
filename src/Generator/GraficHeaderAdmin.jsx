@@ -12,7 +12,7 @@ function GraficHeaderAdmin() {
   const total = buys.reduce((a, b) => a + b.total, 0);
 
   let options = {
-    series: [store.length],
+    series: store !== null ? [store.length] : [0],
     chart: {
       height: 250,
       type: "radialBar",

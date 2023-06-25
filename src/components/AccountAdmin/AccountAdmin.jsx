@@ -228,7 +228,7 @@ function AccountAdmin() {
                   </div>
                 ))
               ) : (
-                <h1>No hay data</h1>
+      null
               )}
             </div>
             <div className="tittleAccount flex bg-green ">
@@ -270,7 +270,7 @@ function AccountAdmin() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            title: "cambiar nombre",
+                           
                             html: `
                         <input id="name" type="text"
                         placeholder="Ingrese el nuevo nombre"/>
@@ -280,6 +280,7 @@ function AccountAdmin() {
                             showCancelButton: true,
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
+                            confirmButtonColor:"#FF13CB",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let name = document.getElementById("name").value;
@@ -328,7 +329,7 @@ function AccountAdmin() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            title: "Editar Correo",
+                           
                             html: ` <input id="email" type="text"
                         placeholder="Ingrese el nuevo Correo"/>
                         `,
@@ -337,6 +338,7 @@ function AccountAdmin() {
                             showCancelButton: true,
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
+                            confirmButtonColor:"#FF13CB",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let email =

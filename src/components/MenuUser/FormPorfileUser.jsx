@@ -184,7 +184,7 @@ function FormPorfileUser() {
                   </div>
                 ))
               ) : (
-                <h1>No hay data</h1>
+               null
               )}
             </div>
             <div className="tittleAccount  ">
@@ -215,7 +215,7 @@ function FormPorfileUser() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            title: "cambiar nombre",
+                           
                             html: `
                         <input id="name" type="text"
                         placeholder="Ingrese el nuevo nombre"/>
@@ -225,6 +225,7 @@ function FormPorfileUser() {
                             showCancelButton: true,
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
+                            confirmButtonColor:"#FF13CB",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let name = document.getElementById("name").value;
@@ -270,15 +271,16 @@ function FormPorfileUser() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            tittle: "Editar Direccion",
+                           
                             html: ` <input id="addresStore" type="text"
-                        placeholder="Ingrese la nueva direccion"/>
+                        placeholder="Ingrese el nuevo correo"/>
                         `,
                             focusConfirm: false,
                             focusCancel: false,
                             showCancelButton: true,
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
+                            confirmButtonColor:"#FF13CB",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let addres =
@@ -318,14 +320,14 @@ function FormPorfileUser() {
 
                   <div className="containerBox flex items-center">
                     <div className="name">
-                      <label>Dirreccion:</label>
+                      <label>Direccion:</label>
                       <span className="mx-2 ">{data.address_customer}</span>
                     </div>
                     <div className="bg-gray-100 border rounded-md my-2 p-1 text-gray-800">
                       <button
                         onClick={() => {
                           swal.fire({
-                            tittle: "Editar Direccion",
+                            
                             html: ` <input id="addresStore" type="text"
                         placeholder="Ingrese la nueva direccion"/>
                         `,
@@ -334,6 +336,7 @@ function FormPorfileUser() {
                             showCancelButton: true,
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
+                            confirmButtonColor:"#FF13CB",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let addres =
@@ -381,15 +384,16 @@ function FormPorfileUser() {
                       <button
                         onClick={() => {
                           swal.fire({
-                            tittle: "Editar Direccion",
+                            
                             html: ` <input id="addresStore" type="text"
-                        placeholder="Ingrese la nueva direccion"/>
+                        placeholder="Ingrese el nuevo telefono"/>
                         `,
                             focusConfirm: false,
                             focusCancel: false,
                             showCancelButton: true,
                             showConfirmButton: true,
                             confirmButtonText: "Guardar",
+                            confirmButtonColor:"#FF13CB",
                             cancelButtonText: "Cancelar",
                             preConfirm: async () => {
                               let addres =
