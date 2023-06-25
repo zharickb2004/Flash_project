@@ -105,7 +105,7 @@ export const TodoGetApis = {
         token,
       },
     });
-  return response;
+    return response;
   },
 
   GetAccountCustomer: async () =>
@@ -397,7 +397,21 @@ export const TodoGetApis = {
   CreateSessionBuy: async (data, price) => {
     const response = await axios.post(
       `${urlServerPayment}/paymentCart/${price}`,
-      {data},
+      { data },
+      {
+        headers: {
+          token,
+        },
+      }
+    );
+    const { url } = response.data;
+    window.location.href = url;
+  },
+
+  CreateSessionBuyDirect: async (data, id) => {
+    const response = await axios.post(
+      `${urlServerPayment}/paymentBuy/${id}`,
+      { data },
       {
         headers: {
           token,

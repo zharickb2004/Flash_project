@@ -6,6 +6,7 @@ import "../Login/user.css";
 
 function Buy() {
   const { idP, price, amount } = useParams();
+  
   const [form, setForm] = useState([]);
 
   const data = async () => {
@@ -19,11 +20,13 @@ function Buy() {
       venta: "virtual",
     };
     try {
-      await TodoGetApis.PostBuy(datas, idP, 0);
-      window.location.href = "/"
+      await TodoGetApis.CreateSessionBuyDirect(datas, idP)
+      // await TodoGetApis.PostBuy(datas, idP, 0);
+      // window.location.href = "/"
       
     } catch (error) {
       alert("Error en la compra")
+      console.log(error);
     }
     
   };
