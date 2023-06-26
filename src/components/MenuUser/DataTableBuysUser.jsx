@@ -14,8 +14,9 @@ function DataTableMBuysUser() {
 
   useEffect(() => {
     (async () => {
-      const response = await TodoGetApis.GetBuysCustomer();
-      setBuys(response.data.data);
+      const response = await TodoGetApis.buys();
+      setBuys(response.rows);
+      console.log(response);
     })();
   }, []);
 
@@ -32,22 +33,9 @@ function DataTableMBuysUser() {
       headerName: "Tienda",
       field: "nombre_tienda",
     },
-
     {
-      headerName: "",
-      field: "id_product",
-    },
-    {
-      headerName: "Codigo Tienda",
-      field: "id_store",
-    },
-    {
-      headerName: "Precio Producto",
+      headerName: "Producto",
       field: "price_product",
-    },
-    {
-      headerName: "Cantidad Producto",
-      field: "amount_product",
     },
     {
       headerName: "Total",
@@ -108,13 +96,11 @@ function DataTableMBuysUser() {
             columnDefs={column}
             rowData={buys.map((item) => {
               return {
-                date: item.date_buys,
-                id_buys: item.id_buys,
-                nombre_tienda: item.nombre_tienda,
-                name_admin: item.name_admin,
-                email_center: item.email_center,
-                email_admin: item.email_admin,
-                img_admin: item.img_adminx,
+                date: item.date,
+                id_buys: item.id,
+                nombre_tienda: item.stores,
+                price_product: item.producto,
+                total: item.price
               };
             })}
             pagination={true}

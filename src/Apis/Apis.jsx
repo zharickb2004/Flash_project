@@ -421,4 +421,13 @@ export const TodoGetApis = {
     const { url } = response.data;
     window.location.href = url;
   },
+
+  buys: async () => {
+   const response = await axios.get(`${urlServerBuy}/buysI`, {
+      headers: {
+        token,
+      },
+    });
+    return response.data;
+  },
 };
